@@ -1,0 +1,45 @@
+
+//gfg contest 141
+class Solution{
+  public:
+    // Function to find element with more appearances between two elements in an
+    // array.
+    int majorityWins(int arr[], int n, int x, int y) {
+        // code here
+    // steps
+    // 1 take 2 variable to keep coutn of x and y
+    int cnt_x=0;
+    int cnt_y=0;
+    // scan the array and get final count
+    for(int index = 0; index < n; index++)
+    {
+        if(arr[index]==x)
+        {
+            cnt_x++;
+        }
+        
+        if(arr[index]==y)
+        {
+            cnt_y++;
+        }
+    }
+    // compare the counts
+    if(cnt_x > cnt_y)
+    {
+        return x;
+    }
+    
+    else if(cnt_y > cnt_x)
+    {
+        return y;
+    }
+    
+    // return the ans
+    return std::min(x,y);
+        
+    }
+    
+
+    
+    
+};
